@@ -1,8 +1,0 @@
-ea4bc82a6ad023ab7ee23ee620429895
-::res://::1712942564
-default_bus_layout.tres::AudioBusLayout::1376293377323092831::1712941840::0::1::::<><>::
-icon.webp::CompressedTexture2D::3626017087650301524::1712941757::1712941839::1::::<><>::
-Intro.ogg::AudioStreamOggVorbis::6703332450730606869::1712941757::1712941839::1::::<><>::
-MicRecord.gd::GDScript::-1::1712941757::0::1::::<>Control<>::
-MicRecord.tscn::PackedScene::8652493714844583989::1712941843::0::1::::<><>::res://MicRecord.gd<>uid://c2re52petqrvx::::res://Intro.ogg
-README.md::TextFile::-1::1712941757::0::1::::<><>::
