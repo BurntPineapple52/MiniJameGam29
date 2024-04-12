@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://dy1at8euvfuyp"]
+
+[ext_resource type="Shader" path="res://scripts/shaders/ripple_edge.gdshader" id="1_w8kk3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fge5g"]
+shader = ExtResource("1_w8kk3")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sd1ch"]
+size = Vector2(1506.67, 755)
+
+[node name="Timebreak" type="Area2D" groups=["hazard"]]
+scale = Vector2(1.2, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_fge5g")
+offset_left = -1380.0
+offset_top = -26.0
+offset_right = 492.0
+offset_bottom = 879.0
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect"]
+material = SubResource("ShaderMaterial_fge5g")
+layout_mode = 0
+offset_left = 57.0
+offset_right = 1929.0
+offset_bottom = 905.0
+color = Color(1, 1, 1, 0.188235)
+
+[node name="ColorRect3" type="ColorRect" parent="ColorRect/ColorRect2"]
+material = SubResource("ShaderMaterial_fge5g")
+layout_mode = 0
+offset_left = 57.0
+offset_right = 1929.0
+offset_bottom = 905.0
+color = Color(1, 1, 1, 0.188235)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-622.5, 367.5)
+shape = SubResource("RectangleShape2D_sd1ch")
