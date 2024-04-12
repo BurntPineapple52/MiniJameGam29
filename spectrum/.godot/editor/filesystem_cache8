@@ -1,0 +1,11 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1712944085
+default_bus_layout.tres::AudioBusLayout::4119602603348103342::1712943625::0::1::::<><>::
+icon.webp::CompressedTexture2D::3626017087650301524::1712941757::1712942539::1::::<><>::
+log.png::CompressedTexture2D::5103530383663918525::1712943360::1712943360::1::::<><>::
+maldita.ogg::AudioStreamOggVorbis::7990079772185374776::1712941757::1712942539::1::::<><>::
+piano_scale.mp3::AudioStreamMP3::8597072785494631674::1712944085::1712944085::1::::<><>::
+README.md::TextFile::-1::1712941757::0::1::::<><>::
+player.gd::GDScript::-1::1712943826::0::1::::<>Node2D<>::
+show_spectrum.gd::GDScript::-1::1712943826::0::1::::<>Node2D<>::
+show_spectrum.tscn::PackedScene::7559994868945812833::1712943829::0::1::::<><>::res://show_spectrum.gd<>uid://dl3ppges2sw77::::res://maldita.ogg<>res://player.gd<>uid://ceygnufdrs35r::::res://log.png

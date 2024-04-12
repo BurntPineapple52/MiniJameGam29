@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dfyeamw4sg2af"]
+
+[ext_resource type="Script" path="res://show_spectrum.gd" id="1"]
+[ext_resource type="AudioStream" uid="uid://duqqsd3m87ouk" path="res://piano_scale.mp3" id="2_1cmje"]
+[ext_resource type="Script" path="res://player.gd" id="3_5aj0j"]
+[ext_resource type="Texture2D" uid="uid://ceygnufdrs35r" path="res://log.png" id="3_apmt2"]
+
+[node name="ShowSpectrum" type="Node2D"]
+position = Vector2(136, 80)
+script = ExtResource("1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 144)
+offset = Vector2(440, 100)
+
+[node name="PlayerShip" type="CharacterBody2D" parent="."]
+script = ExtResource("3_5aj0j")
+
+[node name="Sprite2D" type="Sprite2D" parent="PlayerShip"]
+position = Vector2(122, 505)
+scale = Vector2(0.174603, 0.287879)
+texture = ExtResource("3_apmt2")
+
+[node name="Player" type="AudioStreamPlayer" parent="PlayerShip"]
+stream = ExtResource("2_1cmje")
+autoplay = true
