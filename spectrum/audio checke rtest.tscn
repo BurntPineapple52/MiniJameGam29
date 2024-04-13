@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bexsv4glh3a8k"]
+
+[ext_resource type="Script" path="res://audiochecker.gd" id="1_ef1sw"]
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_tmnjl"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamMicrophone_tmnjl")
+script = ExtResource("1_ef1sw")
