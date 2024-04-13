@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsla8ntrf3uql"]
+
+[ext_resource type="Shader" path="res://scripts/shaders/circle_ripple.gdshader" id="1_m0gj3"]
+[ext_resource type="Material" uid="uid://ced3lygbvqxgp" path="res://assets/materials/pulse_shader.tres" id="3_qu6ye"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ptgyl"]
+shader = ExtResource("1_m0gj3")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gm4l4"]
+radius = 139.032
+
+[node name="GalactoCore" type="Area2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ptgyl")
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect"]
+material = SubResource("ShaderMaterial_ptgyl")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -140.0
+offset_right = 140.0
+offset_bottom = 140.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="ColorRect/ColorRect2"]
+material = ExtResource("3_qu6ye")
+layout_mode = 0
+offset_left = 70.0
+offset_top = 70.0
+offset_right = 220.0
+offset_bottom = 220.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_gm4l4")

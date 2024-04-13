@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://ced3lygbvqxgp"]
+
+[ext_resource type="Shader" path="res://scripts/shaders/pulse.gdshader" id="1_21qnc"]
+
+[resource]
+shader = ExtResource("1_21qnc")
