@@ -5,10 +5,10 @@ const VU_COUNT = 16
 const FREQ_MAX = 11050.0
 
 # Constants for player movement
-const SHIP_SPEED_VERTICAL = 300
-const SHIP_SPEED_HORIZONTAL = 10
+const SHIP_SPEED_VERTICAL = 10
+const SHIP_SPEED_HORIZONTAL = 0
 const NEUTRAL_PITCH = 1350  # Example neutral pitch value
-const NEUTRAL_VOLUME = 50  # Example neutral volume threshold
+const NEUTRAL_VOLUME = 400  # Example neutral volume threshold
 
 var spectrum
 var min_values = []
@@ -33,32 +33,20 @@ func _process(delta):
 		data.append(height)
 		prev_hz = hz
 
-	var average_pitch = calculate_average_pitch(data)
 	var total_volume = calculate_total_volume(data)
 	#print("Average Pitch: ", average_pitch, " | Neutral Pitch: ", NEUTRAL_PITCH)
 	print("Total Volume: ", total_volume, " | Neutral Volume: ", NEUTRAL_VOLUME)
 
-	if average_pitch > NEUTRAL_PITCH:
-		position.y -= SHIP_SPEED_VERTICAL * delta
-	elif average_pitch < NEUTRAL_PITCH:
-		position.y += SHIP_SPEED_VERTICAL * delta
 
 	if total_volume > NEUTRAL_VOLUME:
-		position.x += SHIP_SPEED_HORIZONTAL * delta
+		position.y -= SHIP_SPEED_VERTICAL * delta
+		print("Ship goes up")
 	elif total_volume < NEUTRAL_VOLUME:
-		position.x -= SHIP_SPEED_HORIZONTAL * delta
+		position.y += SHIP_SPEED_VERTICAL * delta
+		print("Ship goes down")
 
 	queue_redraw()
 
-func calculate_average_pitch(data):
-	var total_weighted_pitch = 0.0
-	var total_weight = 0.0
-	for i in range(VU_COUNT):
-		var hz = (i + 1) * FREQ_MAX / VU_COUNT
-		var weight = data[i]
-		total_weighted_pitch += hz * weight
-		total_weight += weight
-	return total_weighted_pitch / total_weight
 
 func calculate_total_volume(data):
 	var total_volume = 0.0
