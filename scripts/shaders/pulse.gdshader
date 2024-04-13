@@ -27,7 +27,7 @@ void fragment() {
 	float m4 = .01*sin(2.0*ang*4.0+TIME);//0.0;//.02*sin(-ang*6.0-TIME);*/
 	float t = .01*sin(TIME);
 	
-	if (hyp > (len/2.0 + t - (m1 + m2+m3+m4))) {
+	if (hyp > (len/2.0 + t - (m1+m2+m3+m4))) {
 		COLOR = texture(TEXTURE, UV);
 		COLOR.a = 0.0;
 	}
