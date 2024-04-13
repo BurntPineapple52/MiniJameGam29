@@ -1,11 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://cy4qmcm1gb67b"]
+[gd_scene load_steps=7 format=3 uid="uid://cy4qmcm1gb67b"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_fbgnx"]
+[ext_resource type="Script" path="res://scripts/spectrum_test.gd" id="1_oh17m"]
+[ext_resource type="Texture2D" uid="uid://dec71i3fuqms3" path="res://assets/sprites/ship_v3.png" id="1_whsws"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8g3cp"]
 size = Vector2(64, 64)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ssv66"]
+size = Vector2(46, 54)
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_1hclb"]
+
 [node name="Stage_1" type="Node2D"]
 
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(147, 83)
+script = ExtResource("1_oh17m")
+
 [node name="Obstacle" type="StaticBody2D" parent="."]
+position = Vector2(296, 240)
+metadata/_edit_group_ = true
 
 [node name="ColorRect" type="ColorRect" parent="Obstacle"]
 offset_left = -32.0
@@ -23,3 +38,21 @@ color = Color(0, 0, 0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle"]
 shape = SubResource("RectangleShape2D_8g3cp")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(294, 175)
+script = ExtResource("1_fbgnx")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("1_whsws")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_ssv66")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Player"]
+stream = SubResource("AudioStreamMicrophone_1hclb")
+autoplay = true
+bus = &"Record"
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
