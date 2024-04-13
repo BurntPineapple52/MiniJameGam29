@@ -6,7 +6,7 @@
 shader = ExtResource("1_w8kk3")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sd1ch"]
-size = Vector2(1506.67, 755)
+size = Vector2(1503.34, 905.5)
 
 [node name="Timebreak" type="Area2D" groups=["hazard"]]
 scale = Vector2(1.2, 1)
@@ -17,6 +17,7 @@ offset_left = -1380.0
 offset_top = -26.0
 offset_right = 492.0
 offset_bottom = 879.0
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect2" type="ColorRect" parent="ColorRect"]
 material = SubResource("ShaderMaterial_fge5g")
@@ -35,5 +36,5 @@ offset_bottom = 905.0
 color = Color(1, 1, 1, 0.188235)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-622.5, 367.5)
+position = Vector2(-645, 425)
 shape = SubResource("RectangleShape2D_sd1ch")
