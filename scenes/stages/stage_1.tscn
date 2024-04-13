@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://cy4qmcm1gb67b"]
+[gd_scene load_steps=10 format=3 uid="uid://cy4qmcm1gb67b"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_fbgnx"]
 [ext_resource type="Script" path="res://scripts/spectrum_test.gd" id="1_oh17m"]
 [ext_resource type="Texture2D" uid="uid://dec71i3fuqms3" path="res://assets/sprites/ship_v3.png" id="1_whsws"]
+[ext_resource type="Texture2D" uid="uid://l23umdfbbc71" path="res://assets/sprites/thrust-v2-1.png" id="4_b7pyu"]
+[ext_resource type="Texture2D" uid="uid://biujci2bondu2" path="res://assets/sprites/thrust-v2-2.png" id="5_e8rxj"]
+[ext_resource type="Texture2D" uid="uid://jj0r82qkgn6h" path="res://assets/sprites/thrust-v2-3.png" id="6_17frw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8g3cp"]
 size = Vector2(64, 64)
@@ -14,9 +17,75 @@ size = Vector2(46, 54)
 
 [node name="Stage_1" type="Node2D"]
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(147, 83)
-script = ExtResource("1_oh17m")
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1335.0
+offset_top = 57.0
+offset_right = 3597.0
+offset_bottom = 97.0
+color = Color(0.14902, 0.14902, 0.14902, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -1124.0
+offset_top = 172.0
+offset_right = 3582.0
+offset_bottom = 212.0
+color = Color(0.14902, 0.14902, 0.14902, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = -2432.0
+offset_top = 340.0
+offset_right = 3490.0
+offset_bottom = 380.0
+color = Color(0.14902, 0.14902, 0.14902, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+offset_left = -2119.0
+offset_top = 512.0
+offset_right = 3181.0
+offset_bottom = 552.0
+color = Color(0.14902, 0.14902, 0.14902, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+offset_left = -1668.0
+offset_top = -321.0
+offset_right = 3705.0
+offset_bottom = -236.0
+color = Color(0.14902, 0.14902, 0.14902, 1)
+
+[node name="ColorRect12" type="ColorRect" parent="."]
+offset_left = -1668.0
+offset_top = -598.0
+offset_right = 3705.0
+offset_bottom = -513.0
+color = Color(0.14902, 0.14902, 0.14902, 1)
+
+[node name="ColorRect13" type="ColorRect" parent="."]
+offset_left = -1674.0
+offset_top = -886.0
+offset_right = 3699.0
+offset_bottom = -801.0
+color = Color(0.14902, 0.14902, 0.14902, 1)
+
+[node name="ColorRect14" type="ColorRect" parent="."]
+offset_left = -1759.0
+offset_top = 743.0
+offset_right = 3614.0
+offset_bottom = 828.0
+color = Color(0.14902, 0.14902, 0.14902, 1)
+
+[node name="ColorRect15" type="ColorRect" parent="."]
+offset_left = -1748.0
+offset_top = 1088.0
+offset_right = 3625.0
+offset_bottom = 1173.0
+color = Color(0.14902, 0.14902, 0.14902, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="."]
+offset_left = -1666.0
+offset_top = -149.0
+offset_right = 3673.0
+offset_bottom = -52.0
+color = Color(0.14902, 0.14902, 0.14902, 1)
 
 [node name="Obstacle" type="StaticBody2D" parent="."]
 position = Vector2(296, 240)
@@ -39,6 +108,10 @@ color = Color(0, 0, 0, 1)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacle"]
 shape = SubResource("RectangleShape2D_8g3cp")
 
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-3, 59)
+script = ExtResource("1_oh17m")
+
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(294, 175)
 script = ExtResource("1_fbgnx")
@@ -56,3 +129,67 @@ autoplay = true
 bus = &"Record"
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="SprThrust1" type="Sprite2D" parent="Player"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-59, 0)
+texture = ExtResource("4_b7pyu")
+
+[node name="SprThrust2" type="Sprite2D" parent="Player"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-59, 0)
+texture = ExtResource("5_e8rxj")
+
+[node name="SprThrust3" type="Sprite2D" parent="Player"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-59, 0)
+texture = ExtResource("6_17frw")
+
+[node name="ColorRect7" type="ColorRect" parent="."]
+offset_left = -670.0
+offset_top = -880.0
+offset_right = -624.0
+offset_bottom = 1316.0
+color = Color(1, 1, 1, 0.290196)
+
+[node name="ColorRect16" type="ColorRect" parent="."]
+offset_left = -1247.0
+offset_top = -891.0
+offset_right = -1201.0
+offset_bottom = 1305.0
+color = Color(1, 1, 1, 0.290196)
+
+[node name="ColorRect17" type="ColorRect" parent="."]
+offset_left = -2101.0
+offset_top = -891.0
+offset_right = -2055.0
+offset_bottom = 1305.0
+color = Color(1, 1, 1, 0.290196)
+
+[node name="ColorRect8" type="ColorRect" parent="."]
+offset_left = -110.0
+offset_top = -914.0
+offset_right = -64.0
+offset_bottom = 1282.0
+color = Color(1, 1, 1, 0.290196)
+
+[node name="ColorRect9" type="ColorRect" parent="."]
+offset_left = 642.0
+offset_top = -852.0
+offset_right = 688.0
+offset_bottom = 1344.0
+color = Color(1, 1, 1, 0.290196)
+
+[node name="ColorRect10" type="ColorRect" parent="."]
+offset_left = 1660.0
+offset_top = -784.0
+offset_right = 1706.0
+offset_bottom = 1412.0
+color = Color(1, 1, 1, 0.290196)
+
+[node name="ColorRect11" type="ColorRect" parent="."]
+offset_left = 2814.0
+offset_top = -756.0
+offset_right = 2860.0
+offset_bottom = 1440.0
+color = Color(1, 1, 1, 0.290196)

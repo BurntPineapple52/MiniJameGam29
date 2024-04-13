@@ -6,7 +6,7 @@ const FREQ_MAX = 11050.0/4
 const WIDTH = 800
 const HEIGHT = 250
 const HEIGHT_SCALE = 8.0
-const MIN_DB = 60
+const MIN_DB = 80
 const ANIMATION_SPEED = 0.1
 
 var spectrum
