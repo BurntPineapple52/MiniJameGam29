@@ -1,13 +1,15 @@
-[gd_scene load_steps=15 format=3 uid="uid://dih1yhtc3i2pi"]
+[gd_scene load_steps=17 format=3 uid="uid://dih1yhtc3i2pi"]
 
 [ext_resource type="Texture2D" uid="uid://bkx4885tx5m5n" path="res://assets/sprites/bg_v1.png" id="1_oollh"]
 [ext_resource type="Script" path="res://scripts/stage.gd" id="1_rf8uv"]
 [ext_resource type="Texture2D" uid="uid://rqer3ckofepk" path="res://assets/sprites/bg_v2.png" id="2_o0ham"]
 [ext_resource type="PackedScene" uid="uid://cqjpbto1jqno8" path="res://scenes/units/player.tscn" id="3_xg2wh"]
 [ext_resource type="PackedScene" uid="uid://dy1at8euvfuyp" path="res://scenes/environment/timebreak.tscn" id="4_qlwoy"]
-[ext_resource type="PackedScene" path="res://scenes/environment/wall_1.tscn" id="6_kot70"]
+[ext_resource type="PackedScene" uid="uid://c377fo1lask10" path="res://scenes/environment/wall_1.tscn" id="6_kot70"]
 [ext_resource type="PackedScene" uid="uid://c2v7luoful5ey" path="res://scenes/environment/collapse_wall.tscn" id="7_h7pos"]
 [ext_resource type="PackedScene" uid="uid://dsla8ntrf3uql" path="res://scenes/environment/galacto_core.tscn" id="8_b103b"]
+[ext_resource type="FontFile" uid="uid://cuk848i8503r0" path="res://assets/fonts/nasalization-rg.otf" id="8_cvwop"]
+[ext_resource type="PackedScene" uid="uid://cu8c1myhjbwx3" path="res://scenes/stages/dialogue.tscn" id="9_vu0lp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j8738"]
 texture = ExtResource("1_oollh")
@@ -120,23 +122,26 @@ visible = false
 modulate = Color(1, 1, 1, 0)
 offset_left = -296.0
 offset_top = -102.0
+offset_bottom = 36.0
 scale = Vector2(2, 2)
 pivot_offset = Vector2(148, 51)
+theme_override_fonts/normal_font = ExtResource("8_cvwop")
 text = "You've fallen through a crack in time. Looks like you get a second chance.
 
 This time..."
+scroll_active = false
 
 [node name="GameOverText2" type="RichTextLabel" parent="GameOverText"]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_left = -0.5
-offset_top = -0.5
-offset_right = 295.5
-offset_bottom = 101.5
+offset_right = 296.0
+offset_bottom = 140.0
 pivot_offset = Vector2(148, 51)
+theme_override_fonts/normal_font = ExtResource("8_cvwop")
 text = "You've fallen through a crack in time. Looks like you get a second chance.
 
 This time..."
+scroll_active = false
 
 [node name="Notes" type="Node" parent="."]
 
@@ -147,7 +152,7 @@ position = Vector2(2084, 161)
 shape = SubResource("RectangleShape2D_42y8u")
 
 [node name="GalactoCore" parent="." instance=ExtResource("8_b103b")]
-position = Vector2(9357, 299)
+position = Vector2(8251, 314)
 
 [node name="WinnerText" type="RichTextLabel" parent="."]
 visible = false
@@ -156,20 +161,24 @@ self_modulate = Color(0, 0, 0, 1)
 offset_left = -444.0
 offset_top = -153.0
 offset_right = -148.0
-offset_bottom = -51.0
+offset_bottom = 4.0
 scale = Vector2(2, 2)
 pivot_offset = Vector2(148, 51)
+theme_override_fonts/normal_font = ExtResource("8_cvwop")
 text = "The universe is saved!
 
 Nice one!"
+scroll_active = false
 
 [node name="WinnerText2" type="RichTextLabel" parent="WinnerText"]
 layout_mode = 0
-offset_left = -0.5
-offset_top = -0.5
-offset_right = 295.5
-offset_bottom = 101.5
+offset_right = 296.0
+offset_bottom = 161.0
 pivot_offset = Vector2(148, 51)
+theme_override_fonts/normal_font = ExtResource("8_cvwop")
 text = "The universe is saved!
 
 Nice one!"
+scroll_active = false
+
+[node name="Dialogue" parent="." instance=ExtResource("9_vu0lp")]

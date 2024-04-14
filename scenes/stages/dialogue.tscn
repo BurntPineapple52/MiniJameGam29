@@ -34,6 +34,7 @@ script = ExtResource("2_qu7hi")
 [node name="next_char" type="Timer" parent="RichTextLabel"]
 
 [node name="2sec" type="Timer" parent="RichTextLabel"]
+wait_time = 4.0
 
 [connection signal="timeout" from="RichTextLabel/next_char" to="RichTextLabel" method="_on_next_char_timeout"]
 [connection signal="timeout" from="RichTextLabel/2sec" to="RichTextLabel" method="_on_sec_timeout"]
