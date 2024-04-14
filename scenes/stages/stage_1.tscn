@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cy4qmcm1gb67b"]
+[gd_scene load_steps=11 format=3 uid="uid://cy4qmcm1gb67b"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_fbgnx"]
 [ext_resource type="Script" path="res://scripts/spectrum_test.gd" id="1_oh17m"]
 [ext_resource type="Texture2D" uid="uid://dec71i3fuqms3" path="res://assets/sprites/ship_v3.png" id="1_whsws"]
 [ext_resource type="Texture2D" uid="uid://l23umdfbbc71" path="res://assets/sprites/thrust-v2-1.png" id="4_b7pyu"]
+[ext_resource type="Script" path="res://scripts/SprThrust.gd" id="5_bax32"]
 [ext_resource type="Texture2D" uid="uid://biujci2bondu2" path="res://assets/sprites/thrust-v2-2.png" id="5_e8rxj"]
 [ext_resource type="Texture2D" uid="uid://jj0r82qkgn6h" path="res://assets/sprites/thrust-v2-3.png" id="6_17frw"]
 
@@ -134,16 +135,19 @@ bus = &"Record"
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-59, 0)
 texture = ExtResource("4_b7pyu")
+script = ExtResource("5_bax32")
 
 [node name="SprThrust2" type="Sprite2D" parent="Player"]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-59, 0)
 texture = ExtResource("5_e8rxj")
+script = ExtResource("5_bax32")
 
 [node name="SprThrust3" type="Sprite2D" parent="Player"]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(-59, 0)
 texture = ExtResource("6_17frw")
+script = ExtResource("5_bax32")
 
 [node name="ColorRect7" type="ColorRect" parent="."]
 offset_left = -670.0
