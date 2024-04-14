@@ -25,6 +25,8 @@ var max_acc = 600
 var max_speed = 400
 var max_magnitude = .2
 
+var fade_time = 3
+
 var record
 var spectrum : AudioEffectSpectrumAnalyzerInstance
 var min_values = []
@@ -33,6 +35,7 @@ var max_values = []
 @onready var spr_thrust_1 = $SprThrust1
 @onready var spr_thrust_2 = $SprThrust2
 @onready var spr_thrust_3 = $SprThrust3
+@onready var stage = $".."
 
 func _ready():
 	record = AudioServer.get_bus_effect_instance(1, 0)
@@ -105,6 +108,24 @@ func calculate_total_volume(data):
 	return total_volume
 
 
+func trigger_death():
+	get_tree().create_tween().tween_property(spr_thrust_1,"modulate",Color(spr_thrust_1.modulate,0),.5)
+	get_tree().create_tween().tween_property(spr_thrust_2,"modulate",Color(spr_thrust_1.modulate,0),.5)
+	get_tree().create_tween().tween_property(spr_thrust_3,"modulate",Color(spr_thrust_1.modulate,0),.5)
+	
+	get_tree().create_tween().tween_property(self,"modulate",Color(modulate,0),fade_time*2/3)
+	get_tree().create_tween().tween_property(self,"rotation",-4.5*PI,fade_time)
+	get_tree().create_tween().tween_property(self,"scale",Vector2(0,0),fade_time).set_ease(Tween.EASE_IN)
+	
+	stage.trigger_reset()
+	process_mode = Node.PROCESS_MODE_DISABLED
+	
+
+func _on_area_entered(area):
+	if area.is_in_group("hazard"):
+		trigger_death()
+	if area.is_in_group("timebreak_start"):
+		stage.start_timebreak()
 
 
 #extends CharacterBody2D  # Change this to the type of your player ship node, e.g., Sprite, KinematicBody2D, etc.
@@ -212,3 +233,4 @@ func calculate_total_volume(data):
 	#for height in data:
 		#total_volume += height
 	#return total_volume
+

@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dy1at8euvfuyp"]
+[gd_scene load_steps=6 format=3 uid="uid://dy1at8euvfuyp"]
 
+[ext_resource type="Script" path="res://scripts/timebreak-test.gd" id="1_swq6i"]
 [ext_resource type="Shader" path="res://scripts/shaders/ripple_edge.gdshader" id="1_w8kk3"]
 [ext_resource type="AudioStream" uid="uid://cmt0t7noo88d5" path="res://assets/audio/timebreak_rumblev2_loop.wav" id="2_fh34h"]
 
@@ -11,12 +12,13 @@ size = Vector2(1503.34, 905.5)
 
 [node name="Timebreak" type="Area2D" groups=["hazard"]]
 scale = Vector2(1.2, 1)
+script = ExtResource("1_swq6i")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_fge5g")
-offset_left = -1380.0
+offset_left = -1486.67
 offset_top = -26.0
-offset_right = 492.0
+offset_right = 385.333
 offset_bottom = 879.0
 metadata/_edit_use_anchors_ = true
 
@@ -37,7 +39,7 @@ offset_bottom = 905.0
 color = Color(1, 1, 1, 0.188235)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-645, 425)
+position = Vector2(-751.667, 425)
 shape = SubResource("RectangleShape2D_sd1ch")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

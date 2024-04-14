@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0pefi"]
 size = Vector2(69.8333, 288)
 
-[node name="TimebreakWall" type="Area2D"]
+[node name="TimebreakWall" type="Area2D" groups=["hazard"]]
 position = Vector2(907.5, -62)
 scale = Vector2(2, 1.5)
 metadata/_edit_group_ = true

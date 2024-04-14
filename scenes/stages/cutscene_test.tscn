@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bl712vip13h6t"]
 
-[ext_resource type="Script" path="res://Dialogue.gd" id="2_qu7hi"]
+[ext_resource type="Script" path="res://scripts/Dialogue.gd" id="2_qu7hi"]
 [ext_resource type="FontFile" uid="uid://cuk848i8503r0" path="res://assets/fonts/nasalization-rg.otf" id="2_x0jo5"]
 
 [node name="Dialogue" type="Node2D"]

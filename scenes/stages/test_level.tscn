@@ -1,10 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://cuwt8ph02hb8i"]
+[gd_scene load_steps=15 format=3 uid="uid://cuwt8ph02hb8i"]
 
 [ext_resource type="PackedScene" uid="uid://cqjpbto1jqno8" path="res://scenes/units/player.tscn" id="1_nivku"]
 [ext_resource type="Texture2D" uid="uid://bkx4885tx5m5n" path="res://assets/sprites/bg_v1.png" id="1_uoj5n"]
 [ext_resource type="Texture2D" uid="uid://rqer3ckofepk" path="res://assets/sprites/bg_v2.png" id="2_164gs"]
 [ext_resource type="PackedScene" uid="uid://dy1at8euvfuyp" path="res://scenes/environment/timebreak.tscn" id="4_0urqb"]
-[ext_resource type="Script" path="res://scripts/timebreak-test.gd" id="5_yx76y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j8738"]
 texture = ExtResource("1_uoj5n")
@@ -38,7 +37,7 @@ size = Vector2(224, 78)
 size = Vector2(37, 34)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2kvmq"]
-size = Vector2(3664, 78)
+size = Vector2(7308, 78)
 
 [node name="TestLevel" type="Node2D"]
 
@@ -170,7 +169,7 @@ position = Vector2(32, 0)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBorders/Top"]
-position = Vector2(1614, -39)
+position = Vector2(3436, -39)
 shape = SubResource("RectangleShape2D_2kvmq")
 
 [node name="Top2" type="StaticBody2D" parent="WorldBorders"]
@@ -183,7 +182,7 @@ position = Vector2(1614, -39)
 shape = SubResource("RectangleShape2D_2kvmq")
 
 [node name="Bottom" type="StaticBody2D" parent="WorldBorders"]
-position = Vector2(24, 727)
+position = Vector2(1594, 717)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBorders/Bottom"]
@@ -191,8 +190,7 @@ position = Vector2(1630.5, -39)
 shape = SubResource("RectangleShape2D_2kvmq")
 
 [node name="Timebreak" parent="." instance=ExtResource("4_0urqb")]
-position = Vector2(-305, -85)
-script = ExtResource("5_yx76y")
+position = Vector2(-536, -85)
 
 [node name="Notes" type="Node" parent="."]
 
