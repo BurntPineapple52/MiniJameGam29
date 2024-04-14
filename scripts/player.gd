@@ -37,6 +37,8 @@ var max_values = []
 @onready var spr_thrust_3 = $SprThrust3
 @onready var stage = $".."
 
+var is_won = false
+
 func _ready():
 	record = AudioServer.get_bus_effect_instance(1, 0)
 	spectrum = AudioServer.get_bus_effect_instance(1, 1)
@@ -119,13 +121,27 @@ func trigger_death():
 	
 	stage.trigger_reset()
 	process_mode = Node.PROCESS_MODE_DISABLED
+
+func trigger_win():
+	get_tree().create_tween().tween_property(spr_thrust_1,"modulate",Color(spr_thrust_1.modulate,0),.5)
+	get_tree().create_tween().tween_property(spr_thrust_2,"modulate",Color(spr_thrust_1.modulate,0),.5)
+	get_tree().create_tween().tween_property(spr_thrust_3,"modulate",Color(spr_thrust_1.modulate,0),.5)
+	is_won = true
+	stage.trigger_win()
 	
+	process_mode = Node.PROCESS_MODE_DISABLED
+	pass
 
 func _on_area_entered(area):
-	if area.is_in_group("hazard"):
-		trigger_death()
-	if area.is_in_group("timebreak_start"):
-		stage.start_timebreak()
+	if !is_won:
+		if area.is_in_group("hazard"):
+			trigger_death()
+		if area.is_in_group("timebreak_start"):
+			stage.start_timebreak()
+		if area.is_in_group("galactocore"):
+			#win
+			
+			trigger_win()
 
 
 #extends CharacterBody2D  # Change this to the type of your player ship node, e.g., Sprite, KinematicBody2D, etc.

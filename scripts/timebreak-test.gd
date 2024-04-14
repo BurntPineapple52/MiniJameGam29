@@ -24,3 +24,8 @@ func speed_up():
 func _process(delta):
 	if global_position.x < camera.global_position.x + vp_width:
 		position += Vector2(speed*delta, 0)
+
+func on_win():
+	get_tree().create_tween().tween_property(self,"speed",-200,.5)
+	await get_tree().create_tween().tween_property(self,"modulate",Color(modulate,0),2)
+	queue_free()
