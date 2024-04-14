@@ -19,7 +19,7 @@ position = Vector2(147, 83)
 script = ExtResource("1_oh17m")
 
 [node name="Obstacle" type="StaticBody2D" parent="."]
-position = Vector2(296, 240)
+position = Vector2(-418, 88)
 metadata/_edit_group_ = true
 
 [node name="ColorRect" type="ColorRect" parent="Obstacle"]

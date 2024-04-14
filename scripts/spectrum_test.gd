@@ -1,7 +1,11 @@
 extends Node2D
 
-const VU_COUNT = 32
-const FREQ_MAX = 11050.0/4
+const VU_COUNT = 80
+const FREQ_MAX = 11050.0/10#4
+#const VU_COUNT = 32
+#const FREQ_MAX = 11050.0/4
+
+const NEUTRAL_PITCH = 200
 
 const WIDTH = 800
 const HEIGHT = 250
@@ -16,9 +20,15 @@ var max_values = []
 func _draw():
 	var w = WIDTH / VU_COUNT
 	for i in range(VU_COUNT):
+		
 		var min_height = min_values[i]
 		var max_height = max_values[i]
+		
 		var height = lerp(min_height, max_height, ANIMATION_SPEED)
+		
+		if i * FREQ_MAX/VU_COUNT < NEUTRAL_PITCH and (i+1)*FREQ_MAX/VU_COUNT > NEUTRAL_PITCH:
+			print("bing")
+			height = 250
 		
 		draw_rect(
 				Rect2(w * i, HEIGHT - height, w - 2, height),
