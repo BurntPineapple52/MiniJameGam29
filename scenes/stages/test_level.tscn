@@ -1,9 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://cuwt8ph02hb8i"]
+[gd_scene load_steps=16 format=3 uid="uid://cuwt8ph02hb8i"]
 
 [ext_resource type="PackedScene" uid="uid://cqjpbto1jqno8" path="res://scenes/units/player.tscn" id="1_nivku"]
 [ext_resource type="Texture2D" uid="uid://bkx4885tx5m5n" path="res://assets/sprites/bg_v1.png" id="1_uoj5n"]
 [ext_resource type="Texture2D" uid="uid://rqer3ckofepk" path="res://assets/sprites/bg_v2.png" id="2_164gs"]
-[ext_resource type="PackedScene" uid="uid://dsla8ntrf3uql" path="res://scenes/environment/galacto_core.tscn" id="3_6iv2x"]
 [ext_resource type="PackedScene" uid="uid://dy1at8euvfuyp" path="res://scenes/environment/timebreak.tscn" id="4_0urqb"]
 [ext_resource type="Script" path="res://scripts/timebreak-test.gd" id="5_yx76y"]
 
@@ -19,9 +18,6 @@ texture_region_size = Vector2i(256, 256)
 tile_size = Vector2i(256, 256)
 sources/0 = SubResource("TileSetAtlasSource_j8738")
 sources/1 = SubResource("TileSetAtlasSource_23swk")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0pefi"]
-size = Vector2(91, 368)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0mta4"]
 size = Vector2(91, 343)
@@ -63,22 +59,8 @@ position = Vector2(296, 327)
 position = Vector2(-347, -92)
 scale = Vector2(1.2, 1)
 
-[node name="Wall" type="StaticBody2D" parent="Walls"]
-position = Vector2(918.333, 93)
-scale = Vector2(0.833333, 1)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall"]
-position = Vector2(45.5, 182)
-shape = SubResource("RectangleShape2D_0pefi")
-
-[node name="ColorRect" type="ColorRect" parent="Walls/Wall"]
-offset_top = -1.0
-offset_right = 92.0
-offset_bottom = 366.0
-
 [node name="Wall2" type="StaticBody2D" parent="Walls"]
-position = Vector2(1268.33, 515)
+position = Vector2(1855.83, 523)
 scale = Vector2(0.833333, 1)
 metadata/_edit_group_ = true
 
@@ -91,8 +73,22 @@ offset_top = -115.0
 offset_right = 92.0
 offset_bottom = 228.0
 
+[node name="Wall4" type="StaticBody2D" parent="Walls"]
+position = Vector2(1100, 137)
+scale = Vector2(0.833333, 1)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall4"]
+position = Vector2(47.5, 55.5)
+shape = SubResource("RectangleShape2D_0mta4")
+
+[node name="ColorRect" type="ColorRect" parent="Walls/Wall4"]
+offset_top = -115.0
+offset_right = 92.0
+offset_bottom = 228.0
+
 [node name="Wall3" type="StaticBody2D" parent="Walls"]
-position = Vector2(1762.5, 92)
+position = Vector2(2559.17, 68)
 scale = Vector2(0.833333, 1)
 metadata/_edit_group_ = true
 
@@ -106,7 +102,7 @@ offset_right = 92.0
 offset_bottom = 288.0
 
 [node name="Wall7" type="StaticBody2D" parent="Walls"]
-position = Vector2(1804.17, 667)
+position = Vector2(2380.83, 679)
 scale = Vector2(0.833333, 1)
 metadata/_edit_group_ = true
 
@@ -125,7 +121,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(2339, 214)
 
 [node name="Wall5" type="StaticBody2D" parent="MovingBlockObstacle"]
-position = Vector2(30, -220)
+position = Vector2(922, -228)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MovingBlockObstacle/Wall5"]
@@ -139,7 +135,7 @@ offset_right = 92.0
 offset_bottom = 90.0
 
 [node name="Wall4" type="StaticBody2D" parent="MovingBlockObstacle"]
-position = Vector2(30, 386)
+position = Vector2(1158, 386)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MovingBlockObstacle/Wall4"]
@@ -154,7 +150,7 @@ offset_bottom = 50.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Replace with Moving Block" type="StaticBody2D" parent="MovingBlockObstacle"]
-position = Vector2(-3, 0)
+position = Vector2(2017, 140)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MovingBlockObstacle/Replace with Moving Block"]
@@ -185,11 +181,7 @@ metadata/_edit_group_ = true
 position = Vector2(1630.5, -39)
 shape = SubResource("RectangleShape2D_2kvmq")
 
-[node name="GalactoCore" parent="." instance=ExtResource("3_6iv2x")]
-position = Vector2(3297, 341)
-
 [node name="Timebreak" parent="." instance=ExtResource("4_0urqb")]
-visible = false
 position = Vector2(-305, -85)
 script = ExtResource("5_yx76y")
 
@@ -214,19 +206,19 @@ text = "Placeholder  Test Level."
 metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="Notes"]
-offset_left = 887.0
-offset_top = 2.0
-offset_right = 1534.0
-offset_bottom = 92.0
+offset_left = 1205.0
+offset_top = 20.0
+offset_right = 1852.0
+offset_bottom = 110.0
 theme_override_font_sizes/normal_font_size = 30
 text = "on hit walls > no crash and die, chance to redeem and not get eaten by time break"
 metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="Notes"]
-offset_left = 2115.0
-offset_top = 282.0
-offset_right = 2762.0
-offset_bottom = 372.0
+offset_left = 3530.0
+offset_top = 272.0
+offset_right = 4177.0
+offset_bottom = 362.0
 theme_override_font_sizes/normal_font_size = 30
 text = "on hit moving block > send to game over screen or restart"
 metadata/_edit_use_anchors_ = true

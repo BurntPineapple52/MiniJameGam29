@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b5xajrr38u0n5"]
+
+[ext_resource type="Shader" path="res://scripts/shaders/ripple_boxv2.gdshader" id="1_872lp"]
+
+[resource]
+shader = ExtResource("1_872lp")

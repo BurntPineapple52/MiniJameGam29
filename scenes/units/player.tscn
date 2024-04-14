@@ -27,6 +27,7 @@ shape = SubResource("RectangleShape2D_ssv66")
 stream = SubResource("AudioStreamMicrophone_1hclb")
 autoplay = true
 bus = &"Record"
+area_mask = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
@@ -50,3 +51,6 @@ modulate = Color(1, 1, 1, 0)
 position = Vector2(-59, 0)
 texture = ExtResource("6_8hqir")
 script = ExtResource("4_4g407")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true
