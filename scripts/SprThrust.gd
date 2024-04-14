@@ -14,5 +14,5 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	position = base_pos + Vector2(0, (player.speed/player.max_speed)*shake_mod*sin(18*PI*time))
-	print(position)
+	#print(position)
 	time += delta

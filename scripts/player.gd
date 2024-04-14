@@ -70,8 +70,8 @@ func _process(delta):
 	if note_magnitude >= .003:
 		if average_pitch != NEUTRAL_PITCH:
 			rotate(clamp((NEUTRAL_PITCH-average_pitch)/pitch_div,-max_avel,max_avel)*delta)
-			print(max_avel)
-			print((NEUTRAL_PITCH-average_pitch)/pitch_div)
+			#print(max_avel)
+			#print((NEUTRAL_PITCH-average_pitch)/pitch_div)
 		var mod = clamp(note_magnitude*acc_mod,min_acc,max_acc)
 		speed = move_toward(speed,max_speed,mod*delta)
 		#print(average_pitch)

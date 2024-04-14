@@ -29,6 +29,9 @@ autoplay = true
 bus = &"Record"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_bottom = 648
 
 [node name="SprThrust1" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)

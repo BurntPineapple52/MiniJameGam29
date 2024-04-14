@@ -1,6 +1,7 @@
 shader_type canvas_item;
 uniform sampler2D texture_name;
 //uniform float width;
+float test = 
 
 void vertex() {
 	// Called for every vertex the material is visible on.
@@ -18,6 +19,7 @@ void fragment() {
 	float line_xpos = (l1 + l2 + l3)/20.0;
 	
 	//get distance to edges, if distance is less than for any of them, make invis.
+	
 	
 	if (UV.x > .8 + line_xpos) { //width*TEXTURE_PIXEL_SIZE.x - 10.0 * sin(UV.y + TIME)) {
 		COLOR = texture(TEXTURE, UV);
