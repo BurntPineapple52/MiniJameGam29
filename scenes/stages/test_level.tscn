@@ -1,10 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://cuwt8ph02hb8i"]
+[gd_scene load_steps=13 format=3 uid="uid://cuwt8ph02hb8i"]
 
-[ext_resource type="Texture2D" uid="uid://dg2g5oalh65em" path="res://icon.svg" id="1_cnyf0"]
-[ext_resource type="PackedScene" uid="uid://dy1at8euvfuyp" path="res://scenes/environment/timebreak.tscn" id="2_j45wj"]
-[ext_resource type="PackedScene" uid="uid://dsla8ntrf3uql" path="res://scenes/environment/galacto_core.tscn" id="2_xd01v"]
-[ext_resource type="Script" path="res://scripts/GodotTestCharacter.gd" id="3_a3het"]
-[ext_resource type="Script" path="res://scripts/timebreak-test.gd" id="5_hki5h"]
+[ext_resource type="PackedScene" uid="uid://cqjpbto1jqno8" path="res://scenes/units/player.tscn" id="1_nivku"]
+[ext_resource type="PackedScene" uid="uid://dsla8ntrf3uql" path="res://scenes/environment/galacto_core.tscn" id="3_6iv2x"]
+[ext_resource type="PackedScene" uid="uid://dy1at8euvfuyp" path="res://scenes/environment/timebreak.tscn" id="4_0urqb"]
+[ext_resource type="Script" path="res://scripts/timebreak-test.gd" id="5_yx76y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0pefi"]
 size = Vector2(91, 368)
@@ -27,62 +26,70 @@ size = Vector2(224, 78)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b3mko"]
 size = Vector2(37, 34)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5iu3v"]
-size = Vector2(96, 97)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2kvmq"]
 size = Vector2(3664, 78)
 
 [node name="TestLevel" type="Node2D"]
 
-[node name="Wall" type="StaticBody2D" parent="."]
-position = Vector2(787, 1)
+[node name="Player" parent="." instance=ExtResource("1_nivku")]
+position = Vector2(255, 319)
+
+[node name="Walls" type="Node2D" parent="."]
+position = Vector2(-347, -92)
+scale = Vector2(1.2, 1)
+
+[node name="Wall" type="StaticBody2D" parent="Walls"]
+position = Vector2(918.333, 93)
+scale = Vector2(0.833333, 1)
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall"]
 position = Vector2(45.5, 182)
 shape = SubResource("RectangleShape2D_0pefi")
 
-[node name="ColorRect" type="ColorRect" parent="Wall"]
+[node name="ColorRect" type="ColorRect" parent="Walls/Wall"]
 offset_top = -1.0
 offset_right = 92.0
 offset_bottom = 366.0
 
-[node name="Wall2" type="StaticBody2D" parent="."]
-position = Vector2(1207, 423)
+[node name="Wall2" type="StaticBody2D" parent="Walls"]
+position = Vector2(1268.33, 515)
+scale = Vector2(0.833333, 1)
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall2"]
 position = Vector2(47.5, 55.5)
 shape = SubResource("RectangleShape2D_0mta4")
 
-[node name="ColorRect" type="ColorRect" parent="Wall2"]
+[node name="ColorRect" type="ColorRect" parent="Walls/Wall2"]
 offset_top = -115.0
 offset_right = 92.0
 offset_bottom = 228.0
 
-[node name="Wall3" type="StaticBody2D" parent="."]
-position = Vector2(1800, 0)
+[node name="Wall3" type="StaticBody2D" parent="Walls"]
+position = Vector2(1762.5, 92)
+scale = Vector2(0.833333, 1)
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall3"]
 position = Vector2(46, 143)
 shape = SubResource("RectangleShape2D_o3hfx")
 
-[node name="ColorRect" type="ColorRect" parent="Wall3"]
+[node name="ColorRect" type="ColorRect" parent="Walls/Wall3"]
 offset_top = -1.0
 offset_right = 92.0
 offset_bottom = 288.0
 
-[node name="Wall7" type="StaticBody2D" parent="."]
-position = Vector2(1850, 575)
+[node name="Wall7" type="StaticBody2D" parent="Walls"]
+position = Vector2(1804.17, 667)
+scale = Vector2(0.833333, 1)
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall7"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall7"]
 position = Vector2(4, 12)
 shape = SubResource("RectangleShape2D_vtxbt")
 
-[node name="ColorRect" type="ColorRect" parent="Wall7"]
+[node name="ColorRect" type="ColorRect" parent="Walls/Wall7"]
 offset_left = -43.0
 offset_top = -53.0
 offset_right = 49.0
@@ -93,7 +100,7 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(2339, 214)
 
 [node name="Wall5" type="StaticBody2D" parent="MovingBlockObstacle"]
-position = Vector2(34, -223)
+position = Vector2(30, -220)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MovingBlockObstacle/Wall5"]
@@ -122,7 +129,7 @@ offset_bottom = 50.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Replace with Moving Block" type="StaticBody2D" parent="MovingBlockObstacle"]
-position = Vector2(4, 2)
+position = Vector2(-3, 0)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MovingBlockObstacle/Replace with Moving Block"]
@@ -135,61 +142,51 @@ offset_top = -17.0
 offset_right = 18.0
 offset_bottom = 19.0
 
-[node name="GodotTestCharacter" type="CharacterBody2D" parent="."]
-position = Vector2(398, 502)
-script = ExtResource("3_a3het")
+[node name="WorldBorders" type="Node2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GodotTestCharacter"]
-position = Vector2(5, -1.5)
-shape = SubResource("RectangleShape2D_5iu3v")
-
-[node name="Replace with character" type="Sprite2D" parent="GodotTestCharacter"]
-position = Vector2(4.99997, -2)
-scale = Vector2(0.773438, 0.765625)
-texture = ExtResource("1_cnyf0")
-
-[node name="World Borders" type="Node" parent="."]
-
-[node name="Top" type="StaticBody2D" parent="World Borders"]
+[node name="Top" type="StaticBody2D" parent="WorldBorders"]
 position = Vector2(32, 0)
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World Borders/Top"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBorders/Top"]
 position = Vector2(1614, -39)
 shape = SubResource("RectangleShape2D_2kvmq")
 
-[node name="Bottom" type="StaticBody2D" parent="World Borders"]
+[node name="Bottom" type="StaticBody2D" parent="WorldBorders"]
 position = Vector2(24, 727)
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World Borders/Bottom"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBorders/Bottom"]
 position = Vector2(1630.5, -39)
 shape = SubResource("RectangleShape2D_2kvmq")
 
-[node name="GalactoCore" parent="." instance=ExtResource("2_xd01v")]
+[node name="GalactoCore" parent="." instance=ExtResource("3_6iv2x")]
 position = Vector2(3297, 341)
 
-[node name="Timebreak" parent="." instance=ExtResource("2_j45wj")]
-position = Vector2(-315, -92)
-script = ExtResource("5_hki5h")
+[node name="Timebreak" parent="." instance=ExtResource("4_0urqb")]
+visible = false
+position = Vector2(-305, -85)
+script = ExtResource("5_yx76y")
 
 [node name="Notes" type="Node" parent="."]
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Notes"]
-offset_left = 1.0
-offset_top = 64.0
-offset_right = 445.0
-offset_bottom = 163.0
+offset_left = 15.0
+offset_top = 50.0
+offset_right = 459.0
+offset_bottom = 233.0
 theme_override_font_sizes/normal_font_size = 30
-text = "On area enter > send to game over screen or restart"
+text = "On area enter > kill character movement > when it reaches end of viewport then game over screen"
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel5" type="RichTextLabel" parent="Notes"]
-offset_left = 157.0
-offset_top = -120.0
-offset_right = 601.0
-offset_bottom = -21.0
+offset_left = 213.0
+offset_top = -149.0
+offset_right = 657.0
+offset_bottom = -50.0
 theme_override_font_sizes/normal_font_size = 30
-text = "Placeholder Level."
+text = "Placeholder  Test Level."
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="Notes"]
 offset_left = 887.0
@@ -198,6 +195,7 @@ offset_right = 1534.0
 offset_bottom = 92.0
 theme_override_font_sizes/normal_font_size = 30
 text = "on hit walls > no crash and die, chance to redeem and not get eaten by time break"
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="Notes"]
 offset_left = 2115.0
@@ -206,6 +204,7 @@ offset_right = 2762.0
 offset_bottom = 372.0
 theme_override_font_sizes/normal_font_size = 30
 text = "on hit moving block > send to game over screen or restart"
+metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Notes"]
 offset_left = 2890.0
@@ -214,3 +213,4 @@ offset_right = 3537.0
 offset_bottom = 184.0
 theme_override_font_sizes/normal_font_size = 30
 text = "On area enter > send to you saved the universe screen or maybe cutscene"
+metadata/_edit_use_anchors_ = true
