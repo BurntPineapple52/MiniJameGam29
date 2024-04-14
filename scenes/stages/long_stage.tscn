@@ -1,11 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://cca765kroalpi"]
+[gd_scene load_steps=15 format=3 uid="uid://dih1yhtc3i2pi"]
 
 [ext_resource type="Texture2D" uid="uid://bkx4885tx5m5n" path="res://assets/sprites/bg_v1.png" id="1_oollh"]
 [ext_resource type="Script" path="res://scripts/stage.gd" id="1_rf8uv"]
 [ext_resource type="Texture2D" uid="uid://rqer3ckofepk" path="res://assets/sprites/bg_v2.png" id="2_o0ham"]
 [ext_resource type="PackedScene" uid="uid://cqjpbto1jqno8" path="res://scenes/units/player.tscn" id="3_xg2wh"]
 [ext_resource type="PackedScene" uid="uid://dy1at8euvfuyp" path="res://scenes/environment/timebreak.tscn" id="4_qlwoy"]
-[ext_resource type="PackedScene" uid="uid://c377fo1lask10" path="res://scenes/environment/wall_1.tscn" id="6_kot70"]
+[ext_resource type="PackedScene" path="res://scenes/environment/wall_1.tscn" id="6_kot70"]
 [ext_resource type="PackedScene" uid="uid://c2v7luoful5ey" path="res://scenes/environment/collapse_wall.tscn" id="7_h7pos"]
 [ext_resource type="PackedScene" uid="uid://dsla8ntrf3uql" path="res://scenes/environment/galacto_core.tscn" id="8_b103b"]
 
