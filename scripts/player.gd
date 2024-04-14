@@ -8,7 +8,7 @@ const FREQ_MAX = 11050.0/4
 
 const SHIP_SPEED_VERTICAL = 300
 const SHIP_SPEED_HORIZONTAL = 10
-const NEUTRAL_PITCH = 1000#1200  # Example neutral pitch value
+const NEUTRAL_PITCH = 800#1000#1200  # Example neutral pitch value
 const NEUTRAL_VOLUME = 50  # Example neutral volume threshold
 const MIN_DB = 60
 

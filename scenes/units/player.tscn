@@ -27,7 +27,6 @@ shape = SubResource("RectangleShape2D_ssv66")
 stream = SubResource("AudioStreamMicrophone_1hclb")
 autoplay = true
 bus = &"Record"
-area_mask = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
