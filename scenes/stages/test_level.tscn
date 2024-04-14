@@ -173,6 +173,15 @@ metadata/_edit_group_ = true
 position = Vector2(1614, -39)
 shape = SubResource("RectangleShape2D_2kvmq")
 
+[node name="Top2" type="StaticBody2D" parent="WorldBorders"]
+position = Vector2(-79, -74)
+rotation = 1.57079
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBorders/Top2"]
+position = Vector2(1614, -39)
+shape = SubResource("RectangleShape2D_2kvmq")
+
 [node name="Bottom" type="StaticBody2D" parent="WorldBorders"]
 position = Vector2(24, 727)
 metadata/_edit_group_ = true
