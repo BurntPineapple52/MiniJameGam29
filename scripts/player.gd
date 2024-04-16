@@ -36,12 +36,14 @@ var max_values = []
 @onready var spr_thrust_2 = $SprThrust2
 @onready var spr_thrust_3 = $SprThrust3
 @onready var stage = $".."
+@onready var camera_2d = $Camera2D
 
 var is_won = false
 
 func _ready():
 	record = AudioServer.get_bus_effect_instance(1, 0)
 	spectrum = AudioServer.get_bus_effect_instance(1, 1)
+	camera_2d.make_current()
 
 func _process(delta):
 	var data = []
@@ -140,8 +142,10 @@ func _on_area_entered(area):
 			stage.start_timebreak()
 		if area.is_in_group("galactocore"):
 			#win
-			
 			trigger_win()
+		if area.is_in_group("checkpoint"):
+			stage.checkpoint_reached(area.checkpoint_id)
+			area.queue_free()
 
 
 #extends CharacterBody2D  # Change this to the type of your player ship node, e.g., Sprite, KinematicBody2D, etc.

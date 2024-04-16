@@ -7,3 +7,13 @@
 script = ExtResource("1_odlb7")
 
 [node name="MainMenu" parent="." instance=ExtResource("1_x76gm")]
+
+[node name="Transition" type="ColorRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+top_level = true
+offset_left = -117.0
+offset_top = -117.0
+offset_right = 1307.0
+offset_bottom = 783.0
+color = Color(0, 0, 0, 1)

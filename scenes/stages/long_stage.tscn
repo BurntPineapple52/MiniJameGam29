@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://dy1at8euvfuyp" path="res://scenes/environment/timebreak.tscn" id="4_qlwoy"]
 [ext_resource type="PackedScene" uid="uid://c377fo1lask10" path="res://scenes/environment/wall_1.tscn" id="6_kot70"]
 [ext_resource type="PackedScene" uid="uid://c2v7luoful5ey" path="res://scenes/environment/collapse_wall.tscn" id="7_h7pos"]
+[ext_resource type="PackedScene" uid="uid://comtt4ermawe1" path="res://scenes/environment/checkpoint.tscn" id="7_qkc3c"]
 [ext_resource type="PackedScene" uid="uid://dsla8ntrf3uql" path="res://scenes/environment/galacto_core.tscn" id="8_b103b"]
 [ext_resource type="FontFile" uid="uid://cuk848i8503r0" path="res://assets/fonts/nasalization-rg.otf" id="8_cvwop"]
-[ext_resource type="PackedScene" uid="uid://cu8c1myhjbwx3" path="res://scenes/stages/dialogue.tscn" id="9_vu0lp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j8738"]
 texture = ExtResource("1_oollh")
@@ -25,7 +25,7 @@ sources/0 = SubResource("TileSetAtlasSource_j8738")
 sources/1 = SubResource("TileSetAtlasSource_23swk")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2kvmq"]
-size = Vector2(9817.5, 78)
+size = Vector2(19390.5, 78)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l1jn2"]
 size = Vector2(68, 688)
@@ -47,7 +47,7 @@ format = 2
 layer_0/tile_data = PackedInt32Array(-1, 1, 0, -65536, 1, 0, -65535, 1, 0, -65534, 1, 0, -65533, 1, 0, -65532, 1, 0, -65531, 1, 0, -65530, 1, 0, 65535, 1, 0, 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 13, 1, 0, -65529, 1, 0, -65528, 1, 0, -65527, 1, 0, -65526, 1, 0, -65525, 1, 0, -65524, 1, 0, -65523, 1, 0, -65522, 1, 0, 131071, 1, 0, 65536, 1, 0, 65537, 1, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 1, 0, 65548, 1, 0, 65549, 1, 0, 65550, 1, 0, 196607, 1, 0, 131072, 1, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 131079, 1, 0, 131080, 1, 0, 131081, 1, 0, 131082, 1, 0, 131083, 1, 0, 131084, 1, 0, 131085, 1, 0, 131086, 1, 0, -65521, 1, 0, 15, 1, 0, 65551, 1, 0, 131087, 1, 0, 131088, 1, 0, 131089, 1, 0, 131090, 1, 0, 131091, 1, 0, 131092, 1, 0, 131093, 1, 0, 131094, 1, 0, 131095, 1, 0, 131096, 1, 0, 131097, 1, 0, 131098, 1, 0, 131099, 1, 0, 131100, 1, 0, 131101, 1, 0, 65552, 1, 0, 65553, 1, 0, 65554, 1, 0, 65555, 1, 0, 65556, 1, 0, 65557, 1, 0, 65558, 1, 0, 65559, 1, 0, 65560, 1, 0, 65561, 1, 0, 65562, 1, 0, 65563, 1, 0, 65564, 1, 0, 65565, 1, 0, 16, 1, 0, 17, 1, 0, 18, 1, 0, 19, 1, 0, 20, 1, 0, 21, 1, 0, 22, 1, 0, 23, 1, 0, 24, 1, 0, 25, 1, 0, 26, 1, 0, 27, 1, 0, 28, 1, 0, 29, 1, 0, -65520, 1, 0, -65519, 1, 0, -65518, 1, 0, -65517, 1, 0, -65516, 1, 0, -65515, 1, 0, -65514, 1, 0, -65513, 1, 0, -65512, 1, 0, -65511, 1, 0, 196605, 1, 0, 131069, 1, 0, 65533, 1, 0, -3, 1, 0, -2, 1, 0, 65534, 1, 0, 131070, 1, 0, 196606, 1, 0, 196604, 1, 0, 131068, 1, 0, 65532, 1, 0, -4, 1, 0, -5, 1, 0)
 
 [node name="Player" parent="." instance=ExtResource("3_xg2wh")]
-position = Vector2(333, 337)
+position = Vector2(599, 323)
 
 [node name="Walls" type="Node2D" parent="."]
 scale = Vector2(1.2, 1)
@@ -90,6 +90,19 @@ scale = Vector2(1.66667, 1.5)
 position = Vector2(5252.5, 139)
 scale = Vector2(0.833333, 1)
 
+[node name="Checkpoints" type="Node2D" parent="."]
+
+[node name="Checkpoint" parent="Checkpoints" instance=ExtResource("7_qkc3c")]
+position = Vector2(597, 331)
+
+[node name="Checkpoint2" parent="Checkpoints" instance=ExtResource("7_qkc3c")]
+position = Vector2(3558, 343)
+checkpoint_id = 1
+
+[node name="Checkpoint3" parent="Checkpoints" instance=ExtResource("7_qkc3c")]
+position = Vector2(7634, 343)
+checkpoint_id = 2
+
 [node name="WorldBorders" type="Node2D" parent="."]
 
 [node name="Top" type="StaticBody2D" parent="WorldBorders"]
@@ -105,7 +118,7 @@ position = Vector2(158, 723)
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBorders/Bottom"]
-position = Vector2(4707.25, -39)
+position = Vector2(9493.75, -39)
 shape = SubResource("RectangleShape2D_2kvmq")
 
 [node name="Left" type="StaticBody2D" parent="WorldBorders"]
@@ -114,15 +127,25 @@ position = Vector2(-26, 324)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBorders/Left"]
 shape = SubResource("RectangleShape2D_l1jn2")
 
+[node name="Area2D" type="Area2D" parent="." groups=["timebreak_start"]]
+position = Vector2(2084, 161)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_42y8u")
+
+[node name="GalactoCore" parent="." instance=ExtResource("8_b103b")]
+position = Vector2(8251, 314)
+
 [node name="Timebreak" parent="." instance=ExtResource("4_qlwoy")]
 position = Vector2(-1309, -77)
 
 [node name="GameOverText" type="RichTextLabel" parent="."]
 visible = false
 modulate = Color(1, 1, 1, 0)
-offset_left = -296.0
-offset_top = -102.0
-offset_bottom = 36.0
+offset_left = -444.0
+offset_top = -153.0
+offset_right = -148.0
+offset_bottom = -15.0
 scale = Vector2(2, 2)
 pivot_offset = Vector2(148, 51)
 theme_override_fonts/normal_font = ExtResource("8_cvwop")
@@ -142,17 +165,6 @@ text = "You've fallen through a crack in time. Looks like you get a second chanc
 
 This time..."
 scroll_active = false
-
-[node name="Notes" type="Node" parent="."]
-
-[node name="Area2D" type="Area2D" parent="." groups=["timebreak_start"]]
-position = Vector2(2084, 161)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_42y8u")
-
-[node name="GalactoCore" parent="." instance=ExtResource("8_b103b")]
-position = Vector2(8251, 314)
 
 [node name="WinnerText" type="RichTextLabel" parent="."]
 visible = false
@@ -180,5 +192,3 @@ text = "The universe is saved!
 
 Nice one!"
 scroll_active = false
-
-[node name="Dialogue" parent="." instance=ExtResource("9_vu0lp")]

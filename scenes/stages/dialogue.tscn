@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cu8c1myhjbwx3"]
+[gd_scene load_steps=4 format=3 uid="uid://cu8c1myhjbwx3"]
 
+[ext_resource type="Script" path="res://scripts/dialogue_mover.gd" id="1_srf34"]
 [ext_resource type="Script" path="res://scripts/Dialogue.gd" id="2_qu7hi"]
 [ext_resource type="FontFile" uid="uid://cuk848i8503r0" path="res://assets/fonts/nasalization-rg.otf" id="2_x0jo5"]
 
 [node name="Dialogue" type="Node2D"]
+script = ExtResource("1_srf34")
 
 [node name="Line2D" type="Line2D" parent="."]
 position = Vector2(46, 457)
