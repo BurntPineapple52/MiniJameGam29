@@ -31,6 +31,8 @@ var record
 var spectrum : AudioEffectSpectrumAnalyzerInstance
 var min_values = []
 var max_values = []
+
+@onready var audio_listener_2d = $AudioListener2D
 @onready var audio_stream_player_2d = $AudioStreamPlayer2D
 @onready var spr_thrust_1 = $SprThrust1
 @onready var spr_thrust_2 = $SprThrust2
@@ -41,6 +43,8 @@ var max_values = []
 var is_won = false
 
 func _ready():
+	audio_stream_player_2d.play()
+	audio_listener_2d.make_current()
 	record = AudioServer.get_bus_effect_instance(1, 0)
 	spectrum = AudioServer.get_bus_effect_instance(1, 1)
 	camera_2d.make_current()
@@ -120,6 +124,8 @@ func trigger_death():
 	get_tree().create_tween().tween_property(self,"modulate",Color(modulate,0),fade_time*2/3)
 	get_tree().create_tween().tween_property(self,"rotation",-4.5*PI,fade_time)
 	get_tree().create_tween().tween_property(self,"scale",Vector2(0,0),fade_time).set_ease(Tween.EASE_IN)
+	
+	audio_stream_player_2d.stop()
 	
 	stage.trigger_reset()
 	process_mode = Node.PROCESS_MODE_DISABLED

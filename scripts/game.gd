@@ -47,6 +47,9 @@ func restart_stage():
 	await get_tree().create_tween().tween_property(fader,"modulate",Color(fader.modulate,1),.25).finished
 	get_viewport().get_camera_2d().set_enabled(false)
 	stage.queue_free()
+	
+	
+	
 	#maybe short wait?
 	#await get_tree().create_timer(.1)
 	stage = LONG_STAGE.instantiate()
